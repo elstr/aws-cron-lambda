@@ -11,17 +11,11 @@ provider:
   deploymentBucket:
     name: pruebas-scheduler-123
 functions:
-  schedule:
-    handler: src/handlers/schedule.handler
+  prueba:
+    handler: src/handlers/prueba.handler
     events:
       - http:
-          path: /schedule
-          method: post
-  event:
-    handler: src/handlers/event.handler
-    events:
-      - http:
-          path: /event
+          path: /prueba
           method: post
   mailer:
     handler: src/handlers/mailer.handler
