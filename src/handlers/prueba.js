@@ -42,7 +42,7 @@ exports.handler = async (event) => {
 async function attachPermission(source) {
   const params = {
     Action: 'lambda:InvokeFunction',
-    FunctionName: 'arn:aws:lambda:us-west-2:772561320311:function:pruebas-scheduler-qa-prueba',
+    FunctionName: 'arn:aws:lambda:us-west-2:772561320311:function:pruebas-scheduler-qa-mailer',
     Principal: 'events.amazonaws.com',
     SourceArn: source,
     StatementId: `my-scheduled-event-${Math.floor(Math.random() * 100)}`
@@ -73,7 +73,7 @@ const attachTarget = (cloudwatchevents) => {
     Rule: 'MyEvent' /* Name of your event */,
     Targets: [
       {
-        Arn: 'arn:aws:lambda:us-west-2:772561320311:function:pruebas-scheduler-qa-prueba',
+        Arn: 'arn:aws:lambda:us-west-2:772561320311:function:pruebas-scheduler-qa-mailer',
         Id: 'random-id-123453'
       }
     ]
